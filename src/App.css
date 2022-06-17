@@ -35,6 +35,10 @@
   padding: 20px;
 }
 
+.HighlightCard-Icon {
+  color: darkslateblue;
+}
+
 .HighlightCard-Header {
   margin: 20px 0;
   font-size: 20px;
