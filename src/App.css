@@ -1,3 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Grandstander&family=Open+Sans:wght@400;700&display=swap");
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+/* HeaderFooter */
+
+.HeaderFooterColorBar {
+  height: 4px;
+  background-color: darkturquoise;
+}
+
+.Logo {
+  margin: 12px;
+  font-family: "Grandstander", cursive;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.Copyright {
+  margin: 8px;
+  text-align: center;
+}
+
 /* Home */
 
 .Home-Container {

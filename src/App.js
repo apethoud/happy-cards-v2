@@ -1,8 +1,13 @@
 import "./App.css";
+import HeaderFooter from "./components/HeaderFooter";
 import Home from "./components/Home";
 
 function App() {
-  return <Home />;
+  return (
+    <HeaderFooter>
+      <Home />
+    </HeaderFooter>
+  );
 }
 
 export default App;
