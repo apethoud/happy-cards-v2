@@ -51,7 +51,9 @@ export default function HolidayList() {
       <div style={{ margin: 10 }}>
         <div>
           {isLoading ? (
-            <FontAwesomeIcon spin icon={faCircleNotch} size="3x" />
+            <div className="FullWidthCenteringContainer">
+              <FontAwesomeIcon spin icon={faCircleNotch} size="3x" />
+            </div>
           ) : holidayList.length > 0 ? (
             holidayList.map((holiday, index) => (
               <div key={index} className="HolidayRow">
@@ -59,7 +61,9 @@ export default function HolidayList() {
               </div>
             ))
           ) : (
-            <div>No holidays found.</div>
+            <div className="FullWidthCenteringContainer">
+              <div>No holidays found.</div>
+            </div>
           )}
         </div>
       </div>
