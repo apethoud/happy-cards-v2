@@ -4,6 +4,36 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 
+/* Global */
+
+.Flex {
+  display: flex;
+}
+
+.FilterButton {
+  margin: 4px;
+  border: 2px solid #333;
+  border-radius: 6px;
+  padding: 6px;
+  background-color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.SelectedButton {
+  border: 2px solid darkslateblue;
+  background-color: darkslateblue;
+  color: #fff;
+}
+
+.FullWidthCenteringContainer {
+  width: 100%;
+  height: 40vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* HeaderFooter */
 
 .HeaderFooterColorBar {
@@ -72,4 +102,12 @@ body {
 
 .HighlightCard-Subtext {
   color: #333;
+}
+
+/* HolidayList */
+
+.HolidayRow {
+  padding: 16px;
+  font-size: 16px;
+  border-bottom: 1px solid #ccc;
 }
