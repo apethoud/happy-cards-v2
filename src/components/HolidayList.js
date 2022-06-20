@@ -24,13 +24,33 @@ export default function HolidayList() {
   }, [selectedTimeframe]);
 
   return (
-    <div>
-      {holidayList.length > 0 &&
-        holidayList.map((holiday, index) => (
-          <div key={index} className="HolidayRow">
-            {holiday.date}: {holiday.name}
-          </div>
-        ))}
-    </div>
+    <>
+      <div className="Flex">
+        <button
+          className={`FilterButton ${
+            selectedTimeframe === "month" ? "SelectedButton" : ""
+          }`}
+          onClick={() => setSelectedTimeframe("month")}
+        >
+          This Month
+        </button>
+        <button
+          className={`FilterButton ${
+            selectedTimeframe === "year" ? "SelectedButton" : ""
+          }`}
+          onClick={() => setSelectedTimeframe("year")}
+        >
+          This Year
+        </button>
+      </div>
+      <div>
+        {holidayList.length > 0 &&
+          holidayList.map((holiday, index) => (
+            <div key={index} className="HolidayRow">
+              {holiday.date}: {holiday.name}
+            </div>
+          ))}
+      </div>
+    </>
   );
 }
