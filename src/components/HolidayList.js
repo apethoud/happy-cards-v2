@@ -1,13 +1,17 @@
 import { useState, useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleNotch } from "@fortawesome/free-solid-svg-icons";
 
 const API_KEY = process.env.REACT_APP_HOLIDAYS_API_KEY;
 
 export default function HolidayList() {
   const [selectedTimeframe, setSelectedTimeframe] = useState("month");
   const [holidayList, setHolidayList] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     async function getHolidays() {
+      setIsLoading(true);
       let params;
       if (selectedTimeframe === "year") {
         params = "&year=2022";
@@ -19,6 +23,7 @@ export default function HolidayList() {
       const data = await response.json();
       console.log(data);
       setHolidayList(data);
+      setIsLoading(false);
     }
     getHolidays();
   }, [selectedTimeframe]);
@@ -43,13 +48,20 @@ export default function HolidayList() {
           This Year
         </button>
       </div>
-      <div>
-        {holidayList.length > 0 &&
-          holidayList.map((holiday, index) => (
-            <div key={index} className="HolidayRow">
-              {holiday.date}: {holiday.name}
-            </div>
-          ))}
+      <div style={{ margin: 10 }}>
+        <div>
+          {isLoading ? (
+            <FontAwesomeIcon spin icon={faCircleNotch} size="3x" />
+          ) : holidayList.length > 0 ? (
+            holidayList.map((holiday, index) => (
+              <div key={index} className="HolidayRow">
+                {holiday.date}: {holiday.name}
+              </div>
+            ))
+          ) : (
+            <div>No holidays found.</div>
+          )}
+        </div>
       </div>
     </>
   );
