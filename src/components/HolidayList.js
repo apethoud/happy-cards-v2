@@ -33,7 +33,7 @@ export default function HolidayList() {
       <div className="Flex">
         <button
           className={`FilterButton ${
-            selectedTimeframe === "month" ? "SelectedButton" : ""
+            selectedTimeframe === "month" ? "SelectedFilterButton" : ""
           }`}
           onClick={() => setSelectedTimeframe("month")}
         >
@@ -41,7 +41,7 @@ export default function HolidayList() {
         </button>
         <button
           className={`FilterButton ${
-            selectedTimeframe === "year" ? "SelectedButton" : ""
+            selectedTimeframe === "year" ? "SelectedFilterButton" : ""
           }`}
           onClick={() => setSelectedTimeframe("year")}
         >
