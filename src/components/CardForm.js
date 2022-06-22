@@ -1,9 +1,12 @@
 import { useState, useRef } from "react";
+import HolidayPickerModal from "./HolidayPickerModal";
 import LabeledTextInput from "./LabeledTextInput";
 
 export default function CardForm() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [recipientName, setRecipientName] = useState("");
   const [recipientEmail, setRecipientEmail] = useState("");
+  const [selectedHolidayName, setSelectedHolidayName] = useState("");
   const [senderName, setSenderName] = useState("");
   const [senderEmail, setSenderEmail] = useState("");
   // const exampleRef = useRef();
@@ -13,6 +16,7 @@ export default function CardForm() {
     const payload = {
       recipientName,
       recipientEmail,
+      holidayName: selectedHolidayName,
       senderName,
       senderEmail,
     };
@@ -33,6 +37,28 @@ export default function CardForm() {
           value={recipientEmail}
           setValue={setRecipientEmail}
         />
+        <div className="Form-InputWrapper">
+          <label className="Label">Pick a Holiday</label>
+          {selectedHolidayName ? (
+            <div style={{ display: "flex" }}>
+              <div style={{ marginRight: 16 }}>{selectedHolidayName}</div>
+              <div
+                style={{ color: "#007d80", cursor: "pointer" }}
+                onClick={() => setIsModalOpen(true)}
+              >
+                Edit
+              </div>
+            </div>
+          ) : (
+            <button
+              className="Button"
+              type="button"
+              onClick={() => setIsModalOpen(true)}
+            >
+              Choose
+            </button>
+          )}
+        </div>
         <LabeledTextInput
           name="Your Name"
           value={senderName}
@@ -56,6 +82,11 @@ export default function CardForm() {
           Submit
         </button>
       </form>
+      <HolidayPickerModal
+        isModalOpen={isModalOpen}
+        setIsModalOpen={setIsModalOpen}
+        setSelectedHolidayName={setSelectedHolidayName}
+      />
     </>
   );
 }
