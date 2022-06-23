@@ -3,6 +3,7 @@ import ReactModal from "react-modal";
 import _ from "lodash";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import { faCircleNotch } from "@fortawesome/free-solid-svg-icons";
 
 const API_KEY = process.env.REACT_APP_HOLIDAYS_API_KEY;
 
@@ -26,12 +27,14 @@ export default function HolidayPickerModal({
   setIsModalOpen,
   setSelectedHolidayName,
 }) {
+  const [isLoading, setIsLoading] = useState(false);
   const [selectedTimeframe, setSelectedTimeframe] = useState("this_month");
   const [holidayList, setHolidayList] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     async function getHolidays() {
+      setIsLoading(true);
       let params;
       if (selectedTimeframe === "this_year") {
         params = "year=2022";
@@ -43,6 +46,7 @@ export default function HolidayPickerModal({
       const data = await response.json();
       console.log(data);
       setHolidayList(data);
+      setIsLoading(false);
     }
     getHolidays();
   }, [selectedTimeframe]);
@@ -108,7 +112,11 @@ export default function HolidayPickerModal({
           ({getFilteredHolidayList().length} options)
         </div>
       </div>
-      {holidayList.length > 0 &&
+      {isLoading ? (
+        <div className="FullWidthCenteringContainer">
+          <FontAwesomeIcon spin icon={faCircleNotch} size="3x" />
+        </div>
+      ) : holidayList.length > 0 ? (
         getFilteredHolidayList().map((holiday, index) => (
           <div
             key={index}
@@ -117,7 +125,12 @@ export default function HolidayPickerModal({
           >
             {holiday.date}: {holiday.name}
           </div>
-        ))}
+        ))
+      ) : (
+        <div className="FullWidthCenteringContainer">
+          <div>No holidays found.</div>
+        </div>
+      )}
     </ReactModal>
   );
 }
