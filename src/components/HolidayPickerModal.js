@@ -89,15 +89,17 @@ export default function HolidayPickerModal({
           placeholder="Search..."
         />
         <button
-          className="Button"
-          selected={selectedTimeframe === "this_month"}
+          className={`Button ${
+            selectedTimeframe === "this_month" ? "HighlightedButton" : ""
+          }`}
           onClick={() => setSelectedTimeframe("this_month")}
         >
           This Month
         </button>
         <button
-          className="Button"
-          selected={selectedTimeframe === "this_year"}
+          className={`Button ${
+            selectedTimeframe === "this_year" ? "HighlightedButton" : ""
+          }`}
           onClick={() => setSelectedTimeframe("this_year")}
         >
           This Year
