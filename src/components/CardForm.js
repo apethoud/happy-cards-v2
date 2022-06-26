@@ -2,12 +2,16 @@ import { useState, useRef } from "react";
 import HolidayPickerModal from "./HolidayPickerModal";
 import LabeledTextInput from "./LabeledTextInput";
 
-export default function CardForm() {
+export default function CardForm({
+  recipientName,
+  setRecipientName,
+  selectedHolidayName,
+  setSelectedHolidayName,
+  senderName,
+  setSenderName,
+}) {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [recipientName, setRecipientName] = useState("");
   const [recipientEmail, setRecipientEmail] = useState("");
-  const [selectedHolidayName, setSelectedHolidayName] = useState("");
-  const [senderName, setSenderName] = useState("");
   const [senderEmail, setSenderEmail] = useState("");
   // const exampleRef = useRef();
 
