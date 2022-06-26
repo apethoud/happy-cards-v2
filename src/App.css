@@ -10,7 +10,7 @@ body {
   display: flex;
 }
 
-.Button {
+/* .Button {
   border-radius: 6px;
   margin-right: 8px;
   padding: 8px;
@@ -19,7 +19,7 @@ body {
   border: 2px solid #ddd;
   background-color: #ddd;
   color: #333;
-}
+} */
 
 .PrimaryButton {
   border: 2px solid darkturquoise;
@@ -33,17 +33,17 @@ body {
   color: #fff;
 }
 
-.Label {
+/* .Label {
   font-size: 16px;
   font-weight: 700;
   margin-bottom: 8px;
-}
+} */
 
-.Input {
+/* .Input {
   border: 1px solid #ccc;
   padding: 8px;
   font-size: 16px;
-}
+} */
 
 .FullWidthCenteringContainer {
   width: 100%;
@@ -55,7 +55,7 @@ body {
 
 /* HeaderFooter */
 
-.HeaderFooterColorBar {
+.HeaderColorBar {
   height: 4px;
   background-color: darkturquoise;
 }
