@@ -29,6 +29,21 @@ export const Button = styled.button`
         `}
 `;
 
+export const TableFilterButton = styled(Button)`
+  ${(props) =>
+    props.selected
+      ? `
+        border: 2px solid darkslateblue;
+        background-color: darkslateblue;
+        color: #fff;
+        `
+      : `
+        border: 2px solid #ddd;
+        background-color: #ddd;
+        color: #333;
+        `}
+`;
+
 export const Label = styled.label`
   font-size: 16px;
   font-weight: 700;

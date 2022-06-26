@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Input } from "./StyledComponents";
+import { Input, TableFilterButton } from "./StyledComponents";
 import ReactModal from "react-modal";
 import _ from "lodash";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -49,7 +49,7 @@ export default function HolidayPickerModal({
       setHolidayList(data);
       setIsLoading(false);
     }
-    // getHolidays();
+    getHolidays();
   }, [selectedTimeframe]);
 
   useEffect(() => {
@@ -92,22 +92,18 @@ export default function HolidayPickerModal({
           style={{ marginRight: 16 }}
           placeholder="Search..."
         />
-        <button
-          className={`Button ${
-            selectedTimeframe === "this_month" ? "HighlightedButton" : ""
-          }`}
+        <TableFilterButton
+          selected={selectedTimeframe === "this_month"}
           onClick={() => setSelectedTimeframe("this_month")}
         >
           This Month
-        </button>
-        <button
-          className={`Button ${
-            selectedTimeframe === "this_year" ? "HighlightedButton" : ""
-          }`}
+        </TableFilterButton>
+        <TableFilterButton
+          selected={selectedTimeframe === "this_year"}
           onClick={() => setSelectedTimeframe("this_year")}
         >
           This Year
-        </button>
+        </TableFilterButton>
         <div style={{ padding: 8, fontStyle: "italic" }}>
           ({getFilteredHolidayList().length} options)
         </div>

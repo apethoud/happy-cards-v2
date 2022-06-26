@@ -10,18 +10,6 @@ body {
   display: flex;
 }
 
-.PrimaryButton {
-  border: 2px solid darkturquoise;
-  background-color: darkturquoise;
-  color: #fff;
-}
-
-.HighlightedButton {
-  border: 2px solid darkslateblue;
-  background-color: darkslateblue;
-  color: #fff;
-}
-
 .FullWidthCenteringContainer {
   width: 100%;
   height: 20vh;
