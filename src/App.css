@@ -10,17 +10,6 @@ body {
   display: flex;
 }
 
-/* .Button {
-  border-radius: 6px;
-  margin-right: 8px;
-  padding: 8px;
-  font-size: 16px;
-  font-weight: 700;
-  border: 2px solid #ddd;
-  background-color: #ddd;
-  color: #333;
-} */
-
 .PrimaryButton {
   border: 2px solid darkturquoise;
   background-color: darkturquoise;
@@ -32,18 +21,6 @@ body {
   background-color: darkslateblue;
   color: #fff;
 }
-
-/* .Label {
-  font-size: 16px;
-  font-weight: 700;
-  margin-bottom: 8px;
-} */
-
-/* .Input {
-  border: 1px solid #ccc;
-  padding: 8px;
-  font-size: 16px;
-} */
 
 .FullWidthCenteringContainer {
   width: 100%;

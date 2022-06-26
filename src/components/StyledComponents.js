@@ -4,6 +4,8 @@ export const AppBackground = styled.div`
   background-color: #fff;
 `;
 
+// Global
+
 export const Button = styled.button`
   border-radius: 6px;
   margin-right: 8px;

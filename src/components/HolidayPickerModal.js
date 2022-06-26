@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Input } from "./StyledComponents";
 import ReactModal from "react-modal";
 import _ from "lodash";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -48,7 +49,7 @@ export default function HolidayPickerModal({
       setHolidayList(data);
       setIsLoading(false);
     }
-    getHolidays();
+    // getHolidays();
   }, [selectedTimeframe]);
 
   useEffect(() => {
@@ -83,8 +84,7 @@ export default function HolidayPickerModal({
         </div>
       </div>
       <div className="Modal-Section" style={{ display: "flex" }}>
-        <input
-          className="Input"
+        <Input
           name="search"
           type="text"
           value={searchTerm}
