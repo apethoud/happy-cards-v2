@@ -10,25 +10,44 @@ body {
   display: flex;
 }
 
-.FilterButton {
-  margin: 4px;
-  border: 2px solid #333;
+.Button {
   border-radius: 6px;
-  padding: 6px;
-  background-color: #fff;
+  margin-right: 8px;
+  padding: 8px;
   font-size: 16px;
-  font-weight: bold;
+  font-weight: 700;
+  border: 2px solid #ddd;
+  background-color: #ddd;
+  color: #333;
 }
 
-.SelectedButton {
+.PrimaryButton {
+  border: 2px solid darkturquoise;
+  background-color: darkturquoise;
+  color: #fff;
+}
+
+.HighlightedButton {
   border: 2px solid darkslateblue;
   background-color: darkslateblue;
   color: #fff;
 }
 
+.Label {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.Input {
+  border: 1px solid #ccc;
+  padding: 8px;
+  font-size: 16px;
+}
+
 .FullWidthCenteringContainer {
   width: 100%;
-  height: 40vh;
+  height: 20vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -110,4 +129,43 @@ body {
   padding: 16px;
   font-size: 16px;
   border-bottom: 1px solid #ccc;
+}
+
+/* Card Form */
+
+.Form-InputWrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 32px;
+  width: 200px;
+}
+
+/* Modal */
+
+.Modal-TitleBar {
+  padding: 16px;
+  border-bottom: 4px solid darkturquoise;
+  display: flex;
+  justify-content: space-between;
+}
+
+.Modal-Title {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.Modal-CloseButtonWrapper {
+  padding: 4px;
+  cursor: pointer;
+}
+
+.Modal-Section {
+  padding: 16px;
+}
+
+.Modal-TableRow {
+  padding: 16px;
+  font-size: 16px;
+  border-bottom: 1px solid #ccc;
+  cursor: pointer;
 }
