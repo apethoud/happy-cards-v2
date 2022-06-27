@@ -1,5 +1,12 @@
 import { useEffect, useState } from "react";
-import { Input, TableFilterButton } from "./StyledComponents";
+import {
+  Input,
+  ModalCloseButtonWrapper,
+  ModalTableRow,
+  ModalTitle,
+  ModalTitleBar,
+  TableFilterButton,
+} from "./StyledComponents";
 import ReactModal from "react-modal";
 import _ from "lodash";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -74,16 +81,13 @@ export default function HolidayPickerModal({
 
   return (
     <ReactModal isOpen={isModalOpen} style={modalStyles}>
-      <div className="Modal-TitleBar">
-        <div className="Modal-Title">Pick a Holiday</div>
-        <div
-          className="Modal-CloseButtonWrapper"
-          onClick={() => handleCloseModal()}
-        >
+      <ModalTitleBar>
+        <ModalTitle>Pick a Holiday</ModalTitle>
+        <ModalCloseButtonWrapper onClick={() => handleCloseModal()}>
           <FontAwesomeIcon icon={faXmark} size="lg" />
-        </div>
-      </div>
-      <div className="Modal-Section" style={{ display: "flex" }}>
+        </ModalCloseButtonWrapper>
+      </ModalTitleBar>
+      <div className="Modal-Section" style={{ display: "flex", padding: 16 }}>
         <Input
           name="search"
           type="text"
@@ -114,13 +118,9 @@ export default function HolidayPickerModal({
         </div>
       ) : holidayList.length > 0 ? (
         getFilteredHolidayList().map((holiday, index) => (
-          <div
-            key={index}
-            className="Modal-TableRow"
-            onClick={() => handleSelect(holiday.name)}
-          >
+          <ModalTableRow key={index} onClick={() => handleSelect(holiday.name)}>
             {holiday.date}: {holiday.name}
-          </div>
+          </ModalTableRow>
         ))
       ) : (
         <div className="FullWidthCenteringContainer">

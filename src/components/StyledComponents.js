@@ -116,3 +116,29 @@ export const HighlightCard = styled.div`
 export const HighlightCardIcon = styled.div`
   color: darkslateblue;
 `;
+
+// Modal
+
+export const ModalTitleBar = styled.div`
+  padding: 16px;
+  border-bottom: 4px solid darkturquoise;
+  display: flex;
+  justify-content: space-between;
+`;
+
+export const ModalTitle = styled.div`
+  font-size: 18px;
+  font-weight: 700;
+`;
+
+export const ModalCloseButtonWrapper = styled.div`
+  padding: 4px;
+  cursor: pointer;
+`;
+
+export const ModalTableRow = styled.div`
+  padding: 16px;
+  font-size: 16px;
+  border-bottom: 1px solid #ccc;
+  cursor: pointer;
+`;
