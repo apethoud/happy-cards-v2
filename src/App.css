@@ -10,66 +10,12 @@ body {
   display: flex;
 }
 
-.Button {
-  border-radius: 6px;
-  margin-right: 8px;
-  padding: 8px;
-  font-size: 16px;
-  font-weight: 700;
-  border: 2px solid #ddd;
-  background-color: #ddd;
-  color: #333;
-}
-
-.PrimaryButton {
-  border: 2px solid darkturquoise;
-  background-color: darkturquoise;
-  color: #fff;
-}
-
-.HighlightedButton {
-  border: 2px solid darkslateblue;
-  background-color: darkslateblue;
-  color: #fff;
-}
-
-.Label {
-  font-size: 16px;
-  font-weight: 700;
-  margin-bottom: 8px;
-}
-
-.Input {
-  border: 1px solid #ccc;
-  padding: 8px;
-  font-size: 16px;
-}
-
 .FullWidthCenteringContainer {
   width: 100%;
   height: 20vh;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-/* HeaderFooter */
-
-.HeaderFooterColorBar {
-  height: 4px;
-  background-color: darkturquoise;
-}
-
-.Logo {
-  margin: 12px;
-  font-family: "Grandstander", cursive;
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.Copyright {
-  margin: 8px;
-  text-align: center;
 }
 
 /* Home */
@@ -96,41 +42,6 @@ body {
   width: 60vw;
 }
 
-/* HighlightCard */
-
-.HighlightCard {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-shadow: 0px 4px 8px #c8c5dc;
-  border: 1px solid #9a94bf;
-  border-radius: 10px;
-  width: 15vw;
-  padding: 20px;
-}
-
-.HighlightCard-Icon {
-  color: darkslateblue;
-}
-
-.HighlightCard-Header {
-  margin: 20px 0;
-  font-size: 20px;
-  font-weight: 700;
-}
-
-.HighlightCard-Subtext {
-  color: #333;
-}
-
-/* HolidayList */
-
-.HolidayRow {
-  padding: 16px;
-  font-size: 16px;
-  border-bottom: 1px solid #ccc;
-}
-
 /* Card Form */
 
 .CardForm-Wrapper {
@@ -142,62 +53,4 @@ body {
   flex-direction: column;
   margin-bottom: 32px;
   width: 200px;
-}
-
-/* Modal */
-
-.Modal-TitleBar {
-  padding: 16px;
-  border-bottom: 4px solid darkturquoise;
-  display: flex;
-  justify-content: space-between;
-}
-
-.Modal-Title {
-  font-size: 18px;
-  font-weight: 700;
-}
-
-.Modal-CloseButtonWrapper {
-  padding: 4px;
-  cursor: pointer;
-}
-
-.Modal-Section {
-  padding: 16px;
-}
-
-.Modal-TableRow {
-  padding: 16px;
-  font-size: 16px;
-  border-bottom: 1px solid #ccc;
-  cursor: pointer;
-}
-
-/* Card Preview */
-
-.CardPreview-Wrapper {
-  margin: 32px;
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: 1px solid #ccc;
-  background-color: #eee;
-  width: 600px;
-  box-shadow: 0px 2px 4px #aaa;
-}
-
-.CardPreview-Text {
-  margin: 48px 0px;
-  padding: 8px 0px;
-  font-size: 24px;
-  font-weight: 700;
-}
-
-.CardPreview-PlaceholderText {
-  border-radius: 8px;
-  padding: 8px;
-  background-color: #ddd;
-  color: #444;
 }

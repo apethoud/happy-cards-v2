@@ -4,24 +4,25 @@ import {
   faObjectGroup,
   faPaperPlane,
 } from "@fortawesome/free-regular-svg-icons";
+import { HomeHeroHeaderText, HomeHeroSubheadText } from "./StyledComponents";
 
 export default function Home() {
   return (
     <div className="Home-Container">
       <div className="Home-HeroSection">
-        <h1 style={{ padding: 6, backgroundColor: "darkturquoise" }}>
+        <HomeHeroHeaderText>
           Send them a smile with HappyCards!
-        </h1>
-        <h2>
-          Choose from thousands of uniquely-themed holiday cards for 500+
+        </HomeHeroHeaderText>
+        <HomeHeroSubheadText>
+          Choose from thousands of uniquely-themed holiday cards for 250+
           different holidays
-        </h2>
+        </HomeHeroSubheadText>
       </div>
       <div className="Home-HighlightsSection">
         <HighlightCard
           icon={faCalendarDays}
           header="Select a Holiday"
-          subtext="Choose from 500+ holidays, the most of any e-card maker."
+          subtext="Choose from 250+ holidays, the most of any e-card maker."
         />
         <HighlightCard
           icon={faObjectGroup}

@@ -1,12 +1,17 @@
+import {
+  AppBackground,
+  FooterCopyright,
+  HeaderColorBar,
+  HeaderLogo,
+} from "./StyledComponents";
+
 export default function HeaderFooter(props) {
   return (
-    <div>
-      <div className="HeaderFooterColorBar" />
-      <div style={{ padding: 10 }}>
-        <div className="Logo">HappyCards</div>
-      </div>
+    <AppBackground>
+      <HeaderColorBar />
+      <HeaderLogo>HappyCards</HeaderLogo>
       <div style={{ padding: 40 }}>{props.children}</div>
-      <div className="Copyright">&copy; 2022 Andrew Pethoud</div>
-    </div>
+      <FooterCopyright>&copy; 2022 Andrew Pethoud</FooterCopyright>
+    </AppBackground>
   );
 }
