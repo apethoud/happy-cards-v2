@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
+// Global
+
 export const AppBackground = styled.div`
   background-color: #fff;
 `;
-
-// Global
 
 export const Button = styled.button`
   border-radius: 6px;
@@ -54,4 +54,24 @@ export const Input = styled.input`
   border: 1px solid #ccc;
   padding: 8px;
   font-size: 16px;
+`;
+
+// HeaderFooter
+
+export const HeaderColorBar = styled.div`
+  height: 4px;
+  background-color: darkturquoise;
+`;
+
+export const HeaderLogo = styled.div`
+  margin: 12px;
+  padding: 10px;
+  font-family: "Grandstander", cursive;
+  font-size: 24px;
+  font-weight: bold;
+`;
+
+export const FooterCopyright = styled.div`
+  margin: 8px;
+  text-align: center;
 `;

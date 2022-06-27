@@ -18,25 +18,6 @@ body {
   align-items: center;
 }
 
-/* HeaderFooter */
-
-.HeaderColorBar {
-  height: 4px;
-  background-color: darkturquoise;
-}
-
-.Logo {
-  margin: 12px;
-  font-family: "Grandstander", cursive;
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.Copyright {
-  margin: 8px;
-  text-align: center;
-}
-
 /* Home */
 
 .Home-Container {
