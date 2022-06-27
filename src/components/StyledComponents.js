@@ -12,9 +12,6 @@ export const Button = styled.button`
   padding: 8px;
   font-size: 16px;
   font-weight: 700;
-  border: 2px solid #ddd;
-  background-color: #ddd;
-  color: #333;
   ${(props) =>
     props.primary
       ? `
@@ -74,4 +71,20 @@ export const HeaderLogo = styled.div`
 export const FooterCopyright = styled.div`
   margin: 8px;
   text-align: center;
+`;
+
+// Home
+
+export const HomeHeroHeaderText = styled.div`
+  margin: 32px;
+  background-color: darkturquoise;
+  font-size: 32px;
+  font-weight: 700;
+  color: #000;
+`;
+
+export const HomeHeroSubheadText = styled.div`
+  font-size: 24px;
+  font-weight: 700;
+  color: #000;
 `;

@@ -6,8 +6,8 @@ import CardBuilder from "./components/CardBuilder";
 function App() {
   return (
     <HeaderFooter>
-      {/* <Home /> */}
-      <CardBuilder />
+      <Home />
+      {/* <CardBuilder /> */}
     </HeaderFooter>
   );
 }
