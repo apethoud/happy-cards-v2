@@ -1,38 +1,37 @@
+import {
+  CardPreviewPlaceholderText as PlaceholderText,
+  CardPreviewText,
+} from "./StyledComponents";
+
 export default function CardPreview(props) {
   const { recipientName, selectedHolidayName, senderName } = props;
 
   return (
     <>
       <div style={{ display: "flex" }}>
-        <div className="CardPreview-Text">Hey&nbsp;</div>
+        <CardPreviewText>Hey&nbsp;</CardPreviewText>
         {recipientName ? (
-          <div className="CardPreview-Text">{recipientName}</div>
+          <CardPreviewText>{recipientName}</CardPreviewText>
         ) : (
-          <div className="CardPreview-Text CardPreview-PlaceholderText">
-            Recipient Name
-          </div>
+          <PlaceholderText>Recipient Name</PlaceholderText>
         )}
-        <div className="CardPreview-Text">!</div>
+        <CardPreviewText>!</CardPreviewText>
       </div>
       <div style={{ display: "flex" }}>
-        <div className="CardPreview-Text">I hope you have a great&nbsp;</div>
+        <CardPreviewText>I hope you have a great&nbsp;</CardPreviewText>
         {selectedHolidayName ? (
-          <div className="CardPreview-Text">{selectedHolidayName}</div>
+          <CardPreviewText>{selectedHolidayName}</CardPreviewText>
         ) : (
-          <div className="CardPreview-Text CardPreview-PlaceholderText">
-            Holiday
-          </div>
+          <PlaceholderText>Holiday</PlaceholderText>
         )}
-        <div className="CardPreview-Text">!</div>
+        <CardPreviewText>!</CardPreviewText>
       </div>
       <div style={{ display: "flex" }}>
-        <div className="CardPreview-Text">From&nbsp;</div>
+        <CardPreviewText>From&nbsp;</CardPreviewText>
         {senderName ? (
-          <div className="CardPreview-Text">{senderName}</div>
+          <CardPreviewText>{senderName}</CardPreviewText>
         ) : (
-          <div className="CardPreview-Text CardPreview-PlaceholderText">
-            Sender Name
-          </div>
+          <PlaceholderText>Sender Name</PlaceholderText>
         )}
       </div>
     </>

@@ -142,3 +142,31 @@ export const ModalTableRow = styled.div`
   border-bottom: 1px solid #ccc;
   cursor: pointer;
 `;
+
+// Card Preview
+
+export const CardPreviewWrapper = styled.div`
+  margin: 32px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #ccc;
+  background-color: #eee;
+  width: 600px;
+  box-shadow: 0px 2px 4px #aaa;
+`;
+
+export const CardPreviewText = styled.div`
+  margin: 48px 0px;
+  padding: 8px 0px;
+  font-size: 24px;
+  font-weight: 700;
+`;
+
+export const CardPreviewPlaceholderText = styled(CardPreviewText)`
+  border-radius: 8px;
+  padding: 8px;
+  background-color: #ddd;
+  color: #444;
+`;

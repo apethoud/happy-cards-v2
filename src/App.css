@@ -54,31 +54,3 @@ body {
   margin-bottom: 32px;
   width: 200px;
 }
-
-/* Card Preview */
-
-.CardPreview-Wrapper {
-  margin: 32px;
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: 1px solid #ccc;
-  background-color: #eee;
-  width: 600px;
-  box-shadow: 0px 2px 4px #aaa;
-}
-
-.CardPreview-Text {
-  margin: 48px 0px;
-  padding: 8px 0px;
-  font-size: 24px;
-  font-weight: 700;
-}
-
-.CardPreview-PlaceholderText {
-  border-radius: 8px;
-  padding: 8px;
-  background-color: #ddd;
-  color: #444;
-}

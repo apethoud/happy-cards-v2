@@ -1,6 +1,7 @@
 import { useState } from "react";
 import CardForm from "./CardForm";
 import CardPreview from "./CardPreview";
+import { CardPreviewWrapper } from "./StyledComponents";
 
 export default function CardBuilder() {
   const [recipientName, setRecipientName] = useState("");
@@ -18,13 +19,13 @@ export default function CardBuilder() {
           setSenderName={setSenderName}
         />
       </div>
-      <div className="CardPreview-Wrapper">
+      <CardPreviewWrapper>
         <CardPreview
           recipientName={recipientName}
           selectedHolidayName={selectedHolidayName}
           senderName={senderName}
         />
-      </div>
+      </CardPreviewWrapper>
     </div>
   );
 }
