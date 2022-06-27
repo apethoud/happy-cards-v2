@@ -6,6 +6,17 @@ export const AppBackground = styled.div`
   background-color: #fff;
 `;
 
+export const Text = styled.div`
+  font-size: 16px;
+  color: #000;
+`;
+
+export const HeaderText = styled(Text)`
+  font-size: 20px;
+  font-weight: 700;
+  color: #000;
+`;
+
 export const Button = styled.button`
   border-radius: 6px;
   margin-right: 8px;
@@ -87,4 +98,21 @@ export const HomeHeroSubheadText = styled.div`
   font-size: 24px;
   font-weight: 700;
   color: #000;
+`;
+
+// HighlightCard
+
+export const HighlightCard = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0px 4px 8px #c8c5dc;
+  border: 1px solid #9a94bf;
+  border-radius: 10px;
+  width: 15vw;
+  padding: 20px;
+`;
+
+export const HighlightCardIcon = styled.div`
+  color: darkslateblue;
 `;
