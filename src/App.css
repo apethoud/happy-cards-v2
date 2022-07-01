@@ -54,3 +54,9 @@ body {
   margin-bottom: 32px;
   width: 200px;
 }
+
+.FormFieldHelp {
+  display: flex;
+  margin-left: 6px;
+  color: #aaa;
+}
