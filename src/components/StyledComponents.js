@@ -1,20 +1,59 @@
 import styled from "styled-components";
 
+const themes = {
+  light: {
+    bg: "#fff",
+    border: "#ccc",
+    text: "#000",
+    teal: "darkturquoise",
+    primaryButton: {
+      bg: "darkturquoise",
+      text: "#fff",
+    },
+    secondaryButton: {
+      bg: "#ddd",
+      text: "#000",
+    },
+    purple: "darkslateblue",
+  },
+  dark: {
+    bg: "#242327",
+    border: "#bfbbd6",
+    text: "#eee",
+    teal: "#007173",
+    primaryButton: {
+      bg: "#007173",
+      text: "#eee",
+    },
+    secondaryButton: {
+      bg: "#888",
+      text: "#000",
+    },
+    purple: "darkslateblue",
+  },
+};
+
 // Global
 
 export const AppBackground = styled.div`
-  background-color: #fff;
+  ${({ theme: { theme } }) => `
+    background-color: ${themes[theme].bg}
+  `}
 `;
 
 export const Text = styled.div`
   font-size: 16px;
-  color: #000;
+  ${({ theme: { theme } }) => `
+    color: ${themes[theme].text}
+  `}
 `;
 
 export const HeaderText = styled(Text)`
   font-size: 20px;
   font-weight: 700;
-  color: #000;
+  ${({ theme: { theme } }) => `
+    color: ${themes[theme].text}
+  `}
 `;
 
 export const Button = styled.button`
@@ -23,17 +62,17 @@ export const Button = styled.button`
   padding: 8px;
   font-size: 16px;
   font-weight: 700;
-  ${(props) =>
-    props.primary
+  ${({ theme: { theme }, primary }) =>
+    primary
       ? `
-        border: 2px solid darkturquoise;
-        background-color: darkturquoise;
-        color: #fff;
+        border: 2px solid ${themes[theme].primaryButton.bg};
+        background-color: ${themes[theme].primaryButton.bg};
+        color: ${themes[theme].primaryButton.text};
         `
       : `
-        border: 2px solid #ddd;
-        background-color: #ddd;
-        color: #333;
+        border: 2px solid ${themes[theme].secondaryButton.bg};
+        background-color: ${themes[theme].secondaryButton.bg};
+        color: ${themes[theme].secondaryButton.text};
         `}
 `;
 
@@ -56,19 +95,28 @@ export const Label = styled.label`
   font-size: 16px;
   font-weight: 700;
   margin-bottom: 8px;
+  ${({ theme: { theme } }) => `
+    color: ${themes[theme].text}
+  `}
 `;
 
 export const Input = styled.input`
-  border: 1px solid #ccc;
   padding: 8px;
   font-size: 16px;
+  ${({ theme: { theme } }) => `
+    border: 1px solid ${themes[theme].border};
+    background-color: ${themes[theme].bg};
+    color: ${themes[theme].text};
+  `}
 `;
 
 // HeaderFooter
 
 export const HeaderColorBar = styled.div`
   height: 4px;
-  background-color: darkturquoise;
+  ${({ theme: { theme } }) => `
+    background-color: ${themes[theme].teal}
+  `}
 `;
 
 export const HeaderLogo = styled.div`
@@ -77,11 +125,18 @@ export const HeaderLogo = styled.div`
   font-family: "Grandstander", cursive;
   font-size: 24px;
   font-weight: bold;
+  ${({ theme: { theme } }) => `
+    color: ${themes[theme].text}
+  `}
 `;
 
 export const FooterCopyright = styled.div`
-  margin: 8px;
+  margin-top: 300px;
+  padding-bottom: 24px;
   text-align: center;
+  ${({ theme: { theme } }) => `
+    color: ${themes[theme].text}
+  `}
 `;
 
 // Home
