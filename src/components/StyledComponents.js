@@ -37,7 +37,8 @@ const themes = {
 
 export const AppBackground = styled.div`
   ${({ theme: { theme } }) => `
-    background-color: ${themes[theme].bg}
+    background-color: ${themes[theme].bg};
+    color: ${themes[theme].text};
   `}
 `;
 
@@ -52,7 +53,7 @@ export const HeaderText = styled(Text)`
   font-size: 20px;
   font-weight: 700;
   ${({ theme: { theme } }) => `
-    color: ${themes[theme].text}
+    color: ${themes[theme].text};
   `}
 `;
 
@@ -96,7 +97,7 @@ export const Label = styled.label`
   font-weight: 700;
   margin-bottom: 8px;
   ${({ theme: { theme } }) => `
-    color: ${themes[theme].text}
+    color: ${themes[theme].text};
   `}
 `;
 
@@ -115,7 +116,7 @@ export const Input = styled.input`
 export const HeaderColorBar = styled.div`
   height: 4px;
   ${({ theme: { theme } }) => `
-    background-color: ${themes[theme].teal}
+    background-color: ${themes[theme].teal};
   `}
 `;
 
@@ -126,7 +127,7 @@ export const HeaderLogo = styled.div`
   font-size: 24px;
   font-weight: bold;
   ${({ theme: { theme } }) => `
-    color: ${themes[theme].text}
+    color: ${themes[theme].text};
   `}
 `;
 
@@ -135,7 +136,7 @@ export const FooterCopyright = styled.div`
   padding-bottom: 24px;
   text-align: center;
   ${({ theme: { theme } }) => `
-    color: ${themes[theme].text}
+    color: ${themes[theme].text};
   `}
 `;
 
