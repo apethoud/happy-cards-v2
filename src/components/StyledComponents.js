@@ -29,7 +29,7 @@ const themes = {
   },
   dark: {
     bg: "#242327",
-    border: "#bfbbd6",
+    border: "#666568",
     buttonPrimary: {
       bg: "#009092",
       text: "#eee",
@@ -219,7 +219,7 @@ export const ModalTitle = styled.div`
   font-weight: 700;
   ${({ theme: { theme } }) => `
     color: ${themes[theme].text};
-  `}
+  `};
 `;
 
 export const ModalCloseButtonWrapper = styled.div`
@@ -227,14 +227,17 @@ export const ModalCloseButtonWrapper = styled.div`
   cursor: pointer;
   ${({ theme: { theme } }) => `
     color: ${themes[theme].text};
-  `}
+  `};
 `;
 
 export const ModalTableRow = styled.div`
   padding: 16px;
   font-size: 16px;
-  border-bottom: 1px solid #ccc;
   cursor: pointer;
+  ${({ theme: { theme } }) => `
+    border-bottom: 1px solid ${themes[theme].border};
+    color: ${themes[theme].text};
+  `}
 `;
 
 // Card Preview

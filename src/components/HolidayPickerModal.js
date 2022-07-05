@@ -6,6 +6,7 @@ import {
   ModalTitle,
   ModalTitleBar,
   TableFilterButton,
+  Text,
 } from "./StyledComponents";
 import ReactModal from "react-modal";
 import _ from "lodash";
@@ -131,9 +132,9 @@ export default function HolidayPickerModal({
         >
           This Year
         </TableFilterButton>
-        <div style={{ padding: 8, fontStyle: "italic" }}>
+        <Text style={{ padding: 8, fontStyle: "italic" }}>
           ({getFilteredHolidayList().length} options)
-        </div>
+        </Text>
       </div>
       {isLoading ? (
         <div className="FullWidthCenteringContainer">
