@@ -100,17 +100,17 @@ export const Button = styled.button`
 `;
 
 export const TableFilterButton = styled(Button)`
-  ${(props) =>
-    props.selected
+  ${({ selected, theme: { theme } }) =>
+    selected
       ? `
-        border: 2px solid darkslateblue;
-        background-color: darkslateblue;
-        color: #fff;
+        border: 2px solid ${themes[theme].buttonPrimary.bg};
+        background-color: ${themes[theme].buttonPrimary.bg};
+        color: ${themes[theme].buttonPrimary.text};
         `
       : `
-        border: 2px solid #ddd;
-        background-color: #ddd;
-        color: #333;
+        border: 2px solid ${themes[theme].buttonSecondary.bg};
+        background-color: ${themes[theme].buttonSecondary.bg};
+        color: ${themes[theme].buttonSecondary.text};
         `}
 `;
 
