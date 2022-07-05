@@ -138,7 +138,9 @@ export default function HolidayPickerModal({
       </div>
       {isLoading ? (
         <div className="FullWidthCenteringContainer">
-          <FontAwesomeIcon spin icon={faCircleNotch} size="3x" />
+          <Text>
+            <FontAwesomeIcon spin icon={faCircleNotch} size="3x" />
+          </Text>
         </div>
       ) : holidayList.length > 0 ? (
         getFilteredHolidayList().map((holiday, index) => (
@@ -148,7 +150,7 @@ export default function HolidayPickerModal({
         ))
       ) : (
         <div className="FullWidthCenteringContainer">
-          <div>No holidays found.</div>
+          <Text>No holidays found.</Text>
         </div>
       )}
     </ReactModal>
