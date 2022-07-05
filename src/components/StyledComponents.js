@@ -23,9 +23,9 @@ const themes = {
     border: "#bfbbd6",
     shadow: "#222222",
     text: "#eee",
-    teal: "#007173",
+    teal: "#009092",
     primaryButton: {
-      bg: "#007173",
+      bg: "#009092",
       text: "#eee",
     },
     secondaryButton: {
@@ -221,10 +221,12 @@ export const CardPreviewWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid #ccc;
-  background-color: #eee;
   width: 600px;
-  box-shadow: 0px 2px 4px #aaa;
+  ${({ theme: { theme } }) => `
+    box-shadow: 0px 2px 4px #aaa;
+    border: 1px solid #ccc;
+    background-color: #eee;
+  `}
 `;
 
 export const CardPreviewText = styled.div`
