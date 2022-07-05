@@ -8,7 +8,7 @@ function App() {
   return (
     <ThemeProvider>
       <HeaderFooter>
-        {/* <Home /> */}
+        <Home />
         <CardBuilder />
       </HeaderFooter>
     </ThemeProvider>

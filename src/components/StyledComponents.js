@@ -4,6 +4,7 @@ const themes = {
   light: {
     bg: "#fff",
     border: "#ccc",
+    shadow: "#c8c5dc",
     text: "#000",
     teal: "darkturquoise",
     primaryButton: {
@@ -15,10 +16,12 @@ const themes = {
       text: "#000",
     },
     purple: "darkslateblue",
+    purpleLight: "#9a94bf",
   },
   dark: {
     bg: "#242327",
     border: "#bfbbd6",
+    shadow: "#222222",
     text: "#eee",
     teal: "#007173",
     primaryButton: {
@@ -29,7 +32,8 @@ const themes = {
       bg: "#888",
       text: "#000",
     },
-    purple: "darkslateblue",
+    purple: "#8c40ff",
+    purpleLight: "#9a94bf",
   },
 };
 
@@ -144,16 +148,21 @@ export const FooterCopyright = styled.div`
 
 export const HomeHeroHeaderText = styled.div`
   margin: 32px;
-  background-color: darkturquoise;
+  padding: 6px;
   font-size: 32px;
   font-weight: 700;
-  color: #000;
+  ${({ theme: { theme } }) => `
+    background-color: ${themes[theme].teal};
+    color: ${themes[theme].text};
+  `}
 `;
 
 export const HomeHeroSubheadText = styled.div`
   font-size: 24px;
   font-weight: 700;
-  color: #000;
+  ${({ theme: { theme } }) => `
+    color: ${themes[theme].text};
+  `}
 `;
 
 // HighlightCard
@@ -162,15 +171,20 @@ export const HighlightCard = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-shadow: 0px 4px 8px #c8c5dc;
-  border: 1px solid #9a94bf;
   border-radius: 10px;
   width: 15vw;
   padding: 20px;
+  ${({ theme: { theme } }) => `
+    box-shadow: 0px 4px 8px ${themes[theme].shadow};
+    border: 1px solid ${themes[theme].purpleLight};
+    background-color: ${themes[theme].bg};
+  `}
 `;
 
 export const HighlightCardIcon = styled.div`
-  color: darkslateblue;
+  ${({ theme: { theme } }) => `
+    color: ${themes[theme].purple};
+  `}
 `;
 
 // Modal
