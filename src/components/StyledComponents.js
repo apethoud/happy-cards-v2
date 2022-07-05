@@ -15,6 +15,7 @@ const themes = {
     shadow: "#c8c5dc",
     text: "#000",
     teal: "darkturquoise",
+    tealText: "#009092",
     preview: {
       border: "#ccc",
       bg: "#eee",
@@ -41,6 +42,7 @@ const themes = {
     shadow: "#222",
     text: "#eee",
     teal: "#009092",
+    tealText: "#73e4e6",
     preview: {
       border: "#5b5a5d",
       bg: "#3a393d",
@@ -112,6 +114,14 @@ export const TableFilterButton = styled(Button)`
         background-color: ${themes[theme].buttonSecondary.bg};
         color: ${themes[theme].buttonSecondary.text};
         `}
+`;
+
+export const Link = styled.div`
+  cursor: pointer;
+  font-weight: 700;
+  ${({ theme: { theme } }) => `
+    color: ${themes[theme].tealText};
+  `}
 `;
 
 export const Label = styled.label`
