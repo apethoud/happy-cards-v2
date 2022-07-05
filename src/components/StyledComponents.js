@@ -217,11 +217,17 @@ export const ModalTitleBar = styled.div`
 export const ModalTitle = styled.div`
   font-size: 18px;
   font-weight: 700;
+  ${({ theme: { theme } }) => `
+    color: ${themes[theme].text};
+  `}
 `;
 
 export const ModalCloseButtonWrapper = styled.div`
   padding: 4px;
   cursor: pointer;
+  ${({ theme: { theme } }) => `
+    color: ${themes[theme].text};
+  `}
 `;
 
 export const ModalTableRow = styled.div`
