@@ -32,7 +32,7 @@ const themes = {
       bg: "#888",
       text: "#000",
     },
-    purple: "#8c40ff",
+    purple: "#9853ff",
     purpleLight: "#9a94bf",
   },
 };
