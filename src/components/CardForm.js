@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import HolidayPickerModal from "./HolidayPickerModal";
 import LabeledTextInput from "./LabeledTextInput";
-import { Label, Button } from "./StyledComponents";
+import { Label, Button, Link } from "./StyledComponents";
 
 export default function CardForm({
   recipientName,
@@ -47,12 +47,7 @@ export default function CardForm({
           {selectedHolidayName ? (
             <div style={{ display: "flex" }}>
               <div style={{ marginRight: 16 }}>{selectedHolidayName}</div>
-              <div
-                style={{ color: "#007d80", cursor: "pointer" }}
-                onClick={() => setIsModalOpen(true)}
-              >
-                Edit
-              </div>
+              <Link onClick={() => setIsModalOpen(true)}>Edit</Link>
             </div>
           ) : (
             <Button type="button" onClick={() => setIsModalOpen(true)}>

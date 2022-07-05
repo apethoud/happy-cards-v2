@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import {
   Input,
   ModalCloseButtonWrapper,
@@ -6,29 +6,16 @@ import {
   ModalTitle,
   ModalTitleBar,
   TableFilterButton,
+  Text,
 } from "./StyledComponents";
 import ReactModal from "react-modal";
 import _ from "lodash";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { faCircleNotch } from "@fortawesome/free-solid-svg-icons";
+import { ThemeContext } from "../contexts/ThemeContext";
 
 const API_KEY = process.env.REACT_APP_HOLIDAYS_API_KEY;
-
-const modalStyles = {
-  overlay: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  content: {
-    position: "relative",
-    width: 800,
-    height: 600,
-    inset: 0,
-    padding: 0,
-  },
-};
 
 export default function HolidayPickerModal({
   isModalOpen,
@@ -39,6 +26,43 @@ export default function HolidayPickerModal({
   const [selectedTimeframe, setSelectedTimeframe] = useState("this_month");
   const [holidayList, setHolidayList] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+  const { theme } = useContext(ThemeContext);
+
+  const modalStyles = {
+    light: {
+      overlay: {
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: "rgba(255, 255, 255, 0.75)",
+      },
+      content: {
+        position: "relative",
+        width: 800,
+        height: 600,
+        inset: 0,
+        padding: 0,
+        backgroundColor: "#fff",
+      },
+    },
+    dark: {
+      overlay: {
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: "rgba(0, 0, 0, 0.75)",
+      },
+      content: {
+        position: "relative",
+        width: 800,
+        height: 600,
+        inset: 0,
+        padding: 0,
+        backgroundColor: "#242327",
+        borderColor: "#504f52",
+      },
+    },
+  };
 
   useEffect(() => {
     async function getHolidays() {
@@ -80,7 +104,7 @@ export default function HolidayPickerModal({
   }
 
   return (
-    <ReactModal isOpen={isModalOpen} style={modalStyles}>
+    <ReactModal isOpen={isModalOpen} style={modalStyles[theme]}>
       <ModalTitleBar>
         <ModalTitle>Pick a Holiday</ModalTitle>
         <ModalCloseButtonWrapper onClick={() => handleCloseModal()}>
@@ -108,13 +132,15 @@ export default function HolidayPickerModal({
         >
           This Year
         </TableFilterButton>
-        <div style={{ padding: 8, fontStyle: "italic" }}>
+        <Text style={{ padding: 8, fontStyle: "italic" }}>
           ({getFilteredHolidayList().length} options)
-        </div>
+        </Text>
       </div>
       {isLoading ? (
         <div className="FullWidthCenteringContainer">
-          <FontAwesomeIcon spin icon={faCircleNotch} size="3x" />
+          <Text>
+            <FontAwesomeIcon spin icon={faCircleNotch} size="3x" />
+          </Text>
         </div>
       ) : holidayList.length > 0 ? (
         getFilteredHolidayList().map((holiday, index) => (
@@ -124,7 +150,7 @@ export default function HolidayPickerModal({
         ))
       ) : (
         <div className="FullWidthCenteringContainer">
-          <div>No holidays found.</div>
+          <Text>No holidays found.</Text>
         </div>
       )}
     </ReactModal>
