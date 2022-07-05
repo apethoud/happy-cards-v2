@@ -4,16 +4,25 @@ const themes = {
   light: {
     bg: "#fff",
     border: "#ccc",
-    shadow: "#c8c5dc",
-    text: "#000",
-    teal: "darkturquoise",
-    primaryButton: {
+    buttonPrimary: {
       bg: "darkturquoise",
       text: "#000",
     },
-    secondaryButton: {
+    buttonSecondary: {
       bg: "#ddd",
       text: "#000",
+    },
+    shadow: "#c8c5dc",
+    text: "#000",
+    teal: "darkturquoise",
+    preview: {
+      border: "#ccc",
+      bg: "#eee",
+      shadow: "#c8c5dc",
+      placeholder: {
+        bg: "#ddd",
+        text: "#444",
+      },
     },
     purple: "darkslateblue",
     purpleLight: "#9a94bf",
@@ -21,16 +30,25 @@ const themes = {
   dark: {
     bg: "#242327",
     border: "#bfbbd6",
-    shadow: "#222222",
-    text: "#eee",
-    teal: "#009092",
-    primaryButton: {
+    buttonPrimary: {
       bg: "#009092",
       text: "#eee",
     },
-    secondaryButton: {
+    buttonSecondary: {
       bg: "#666",
       text: "#fff",
+    },
+    shadow: "#222",
+    text: "#eee",
+    teal: "#009092",
+    preview: {
+      border: "#5b5a5d",
+      bg: "#3a393d",
+      shadow: "#222",
+      placeholder: {
+        bg: "#504f52",
+        text: "#ccc",
+      },
     },
     purple: "#9853ff",
     purpleLight: "#9a94bf",
@@ -70,14 +88,14 @@ export const Button = styled.button`
   ${({ theme: { theme }, primary }) =>
     primary
       ? `
-        border: 2px solid ${themes[theme].primaryButton.bg};
-        background-color: ${themes[theme].primaryButton.bg};
-        color: ${themes[theme].primaryButton.text};
+        border: 2px solid ${themes[theme].buttonPrimary.bg};
+        background-color: ${themes[theme].buttonPrimary.bg};
+        color: ${themes[theme].buttonPrimary.text};
         `
       : `
-        border: 2px solid ${themes[theme].secondaryButton.bg};
-        background-color: ${themes[theme].secondaryButton.bg};
-        color: ${themes[theme].secondaryButton.text};
+        border: 2px solid ${themes[theme].buttonSecondary.bg};
+        background-color: ${themes[theme].buttonSecondary.bg};
+        color: ${themes[theme].buttonSecondary.text};
         `}
 `;
 
@@ -223,10 +241,10 @@ export const CardPreviewWrapper = styled.div`
   align-items: center;
   width: 600px;
   ${({ theme: { theme } }) => `
-    box-shadow: 0px 2px 4px #aaa;
-    border: 1px solid #ccc;
-    background-color: #eee;
-  `}
+    box-shadow: 0px 2px 4px ${themes[theme].preview.shadow};
+    border: 1px solid ${themes[theme].preview.border};
+    background-color: ${themes[theme].preview.bg};
+  `};
 `;
 
 export const CardPreviewText = styled.div`
@@ -239,6 +257,8 @@ export const CardPreviewText = styled.div`
 export const CardPreviewPlaceholderText = styled(CardPreviewText)`
   border-radius: 8px;
   padding: 8px;
-  background-color: #ddd;
-  color: #444;
+  ${({ theme: { theme } }) => `
+    background-color: ${themes[theme].preview.placeholder.bg};
+    color: ${themes[theme].preview.placeholder.text};
+  `};
 `;
