@@ -9,7 +9,7 @@ const themes = {
     teal: "darkturquoise",
     primaryButton: {
       bg: "darkturquoise",
-      text: "#fff",
+      text: "#000",
     },
     secondaryButton: {
       bg: "#ddd",
@@ -29,8 +29,8 @@ const themes = {
       text: "#eee",
     },
     secondaryButton: {
-      bg: "#888",
-      text: "#000",
+      bg: "#666",
+      text: "#fff",
     },
     purple: "#9853ff",
     purpleLight: "#9a94bf",
