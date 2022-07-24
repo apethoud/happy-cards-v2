@@ -54,3 +54,12 @@ body {
   margin-bottom: 32px;
   width: 200px;
 }
+
+/* Not Found */
+
+.Centering-Container {
+  padding: 240px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
