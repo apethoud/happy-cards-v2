@@ -4,7 +4,13 @@ import {
   faObjectGroup,
   faPaperPlane,
 } from "@fortawesome/free-regular-svg-icons";
-import { HomeHeroHeaderText, HomeHeroSubheadText } from "./StyledComponents";
+import {
+  Button,
+  HeaderText,
+  HomeHeroHeaderText,
+  HomeHeroSubheadText,
+} from "./StyledComponents";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
@@ -34,6 +40,14 @@ export default function Home() {
           header="Let Us Deliver It"
           subtext="We'll automatically send it to your loved one on a date you select."
         />
+      </div>
+      <div className="Home-CallToActionSection">
+        <HeaderText style={{ margin: 20 }}>
+          What are you waiting for? Give it a whirl!
+        </HeaderText>
+        <Link to="card-builder">
+          <Button primary>Get Started</Button>
+        </Link>
       </div>
     </div>
   );

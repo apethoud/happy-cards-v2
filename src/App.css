@@ -21,7 +21,7 @@ body {
 /* Home */
 
 .Home-Container {
-  padding: 240px 0;
+  padding: 120px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -42,6 +42,11 @@ body {
   width: 60vw;
 }
 
+.Home-CallToActionSection {
+  text-align: center;
+  padding: 120px 0;
+}
+
 /* Card Form */
 
 .CardForm-Wrapper {
@@ -58,7 +63,7 @@ body {
 /* Not Found */
 
 .Centering-Container {
-  padding: 240px 0;
+  padding: 120px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
