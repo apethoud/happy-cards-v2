@@ -18,7 +18,10 @@ export default function HeaderFooter(props) {
       <HeaderColorBar />
       <div style={{ display: "flex", justifyContent: "space-between" }}>
         <HeaderLogo>HappyCards</HeaderLogo>
-        <div onClick={toggleTheme} style={{ marginTop: 15, marginRight: 20 }}>
+        <div
+          onClick={toggleTheme}
+          style={{ marginTop: 15, marginRight: 20, cursor: "pointer" }}
+        >
           <FontAwesomeIcon
             icon={theme === "light" ? faSun : faMoon}
             size="2x"
