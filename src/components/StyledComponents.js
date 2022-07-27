@@ -1,4 +1,10 @@
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
+
+const assignLinkBgColor = (props) => {
+  console.log("props is: ", props);
+  return "yellow";
+};
 
 const themes = {
   light: {
@@ -161,6 +167,14 @@ export const HeaderLogo = styled.div`
   ${({ theme: { theme } }) => `
     color: ${themes[theme].text};
   `}
+`;
+
+export const HeaderNavLink = styled.div`
+  padding: 18px 24px;
+  text-decoration: none;
+  ${({ theme: { theme } }) => `
+    color: ${themes[theme].text};
+  `};
 `;
 
 export const FooterCopyright = styled.div`
