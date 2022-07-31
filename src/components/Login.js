@@ -1,14 +1,8 @@
 import { useState, useContext } from "react";
 import { UserContext } from "../contexts/UserContext";
 import { Label, Input, Button, Text } from "./StyledComponents";
-import { useNavigate, useLocation } from "react-router-dom";
-
-const validTestUser = {
-  id: "cE5bh7Sgb4gKd8v64h57",
-  name: "Andrew",
-  email: "andrew@email.com",
-  password: "abc123",
-};
+import { useNavigate } from "react-router-dom";
+import { fetchTestUserDataByEmail } from "../api/api";
 
 export default function Login(props) {
   const [email, setEmail] = useState("");
@@ -25,8 +19,10 @@ export default function Login(props) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    if (email === validTestUser.email && password === validTestUser.password) {
-      loginUser(validTestUser);
+    const user = fetchTestUserDataByEmail(email);
+    console.log("user is: ", user);
+    if (user && password === "abc123") {
+      loginUser(user);
     } else {
       setShowLoginError(true);
     }

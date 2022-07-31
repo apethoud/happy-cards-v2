@@ -11,9 +11,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
 import { Outlet } from "react-router-dom";
 import { NavLink } from "react-router-dom";
+import { UserContext } from "../contexts/UserContext";
 
 export default function HeaderFooter(props) {
   const { theme, toggleTheme } = useContext(ThemeContext);
+  const { loggedInUser } = useContext(UserContext);
 
   function styleByActiveStatus(isActive) {
     return isActive
@@ -46,12 +48,14 @@ export default function HeaderFooter(props) {
             >
               <HeaderNavLink>Login</HeaderNavLink>
             </NavLink>
-            <NavLink
-              style={({ isActive }) => styleByActiveStatus(isActive)}
-              to="/profile"
-            >
-              <HeaderNavLink>Profile</HeaderNavLink>
-            </NavLink>
+            {loggedInUser && (
+              <NavLink
+                style={({ isActive }) => styleByActiveStatus(isActive)}
+                to={`/profile/${loggedInUser.id}`}
+              >
+                <HeaderNavLink>Profile</HeaderNavLink>
+              </NavLink>
+            )}
           </div>
           <div
             onClick={toggleTheme}

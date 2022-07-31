@@ -2,6 +2,7 @@ import "./App.css";
 import HeaderFooter from "./components/HeaderFooter";
 import Home from "./components/Home";
 import CardBuilder from "./components/CardBuilder";
+import Profile from "./components/Profile";
 import Login from "./components/Login";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -22,6 +23,14 @@ function App() {
                 element={
                   <AuthChecker>
                     <CardBuilder />
+                  </AuthChecker>
+                }
+              />
+              <Route
+                path="profile/:userId"
+                element={
+                  <AuthChecker>
+                    <Profile />
                   </AuthChecker>
                 }
               />
