@@ -66,6 +66,7 @@ const themes = {
 // Global
 
 export const AppBackground = styled.div`
+  min-height: 100vh;
   ${({ theme: { theme } }) => `
     background-color: ${themes[theme].bg};
     color: ${themes[theme].text};
