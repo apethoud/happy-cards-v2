@@ -21,6 +21,14 @@ export default function Profile(props) {
       <Text>Hello {name}!</Text>
       <Text>Email: {email}</Text>
       <Text>Member since: {created}</Text>
+      <div style={{ display: "flex" }}>
+        <div style={{ backgroundColor: "#ddd" }}>
+          <div>Account Info</div>
+          <div>Sent Cards</div>
+          <div>Billing</div>
+        </div>
+        <div style={{ backgroundColor: "#ccc" }}>Outlet</div>
+      </div>
     </>
   );
 }

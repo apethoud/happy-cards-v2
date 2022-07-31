@@ -12,7 +12,6 @@ export default function Login(props) {
   let navigate = useNavigate();
 
   function loginUser(user) {
-    console.log("setLoggedInUser is: ", setLoggedInUser);
     setLoggedInUser(user);
     navigate("/card-builder");
   }
