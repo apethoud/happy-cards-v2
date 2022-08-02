@@ -11,3 +11,7 @@ export const fetchTestUserDataById = (id) => {
 export const fetchTestSavedCardsByUserId = (id) => {
   return SavedCards.filter((card) => card.userId === id);
 };
+
+export const fetchTestSavedCardById = (id) => {
+  return SavedCards.find((card) => card.id === id);
+};

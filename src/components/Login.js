@@ -19,7 +19,6 @@ export default function Login(props) {
   function handleSubmit(event) {
     event.preventDefault();
     const user = fetchTestUserDataByEmail(email);
-    console.log("user is: ", user);
     if (user && password === "abc123") {
       loginUser(user);
     } else {

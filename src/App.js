@@ -9,6 +9,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NotFound from "./components/NotFound";
 import { UserProvider } from "./contexts/UserContext";
 import AuthChecker from "./components/AuthChecker";
+import AccountInfo from "./components/AccountInfo";
+import SentCards from "./components/SentCards";
+import Billing from "./components/Billing";
+import ProfileCardView from "./components/ProfileCardView";
 
 function App() {
   return (
@@ -34,6 +38,7 @@ function App() {
                   </AuthChecker>
                 }
               />
+              <Route path="sent-cards/:cardId" element={<ProfileCardView />} />
               <Route path="login" element={<Login />} />
               <Route path="*" element={<NotFound />} />
             </Route>

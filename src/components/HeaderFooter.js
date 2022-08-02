@@ -42,18 +42,19 @@ export default function HeaderFooter(props) {
             >
               <HeaderNavLink>Card Builder</HeaderNavLink>
             </NavLink>
-            <NavLink
-              style={({ isActive }) => styleByActiveStatus(isActive)}
-              to="/login"
-            >
-              <HeaderNavLink>Login</HeaderNavLink>
-            </NavLink>
-            {loggedInUser && (
+            {loggedInUser ? (
               <NavLink
                 style={({ isActive }) => styleByActiveStatus(isActive)}
                 to={`/profile/${loggedInUser.id}`}
               >
                 <HeaderNavLink>Profile</HeaderNavLink>
+              </NavLink>
+            ) : (
+              <NavLink
+                style={({ isActive }) => styleByActiveStatus(isActive)}
+                to="/login"
+              >
+                <HeaderNavLink>Login</HeaderNavLink>
               </NavLink>
             )}
           </div>
